@@ -16,12 +16,16 @@
 		<script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
 	</head>
 	<body>
-		<a-scene id="a-scene" embedded arj="trackingMethod: best;">
+		<a-scene
+			id="a-scene"
+			embedded
+			arj="trackingMethod: best; sourceType: webcam;"
+		>
 			<a-marker type="pattern" url="pattern-frame (1).patt">
 				<a-entity
 					id="backpack-model"
 					gltf-model="url(apple-vision-pro.glb)"
-					scale="1 1 1"
+					scale="10 10 10"
 					position="0 0 0"
 				></a-entity>
 			</a-marker>
