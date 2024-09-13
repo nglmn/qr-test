@@ -3,27 +3,31 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>WebAR with QR Code</title>
-		<style>
-			body {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 100vh;
-				margin: 0;
-				flex-direction: column;
-			}
-
-			canvas,
-			img {
-				margin-top: 20px;
-			}
-		</style>
+		<title>AR QR Code</title>
 	</head>
 	<body>
-		<h1>Scan the QR code to view the 3D model in AR</h1>
-		<canvas id="qrCanvas"></canvas>
+		<h1>Scan this QR code to view the 3D model in AR</h1>
+		<canvas id="qrcode"></canvas>
 
-		<script type="module" src="/main.js"></script>
+		<script type="module">
+			import QRCode from "qrcode";
+
+			// URL до вашої AR-моделі
+			const arModelUrl = "https://your-ar-model-url.com/ar.html";
+
+			// Генерація QR-коду
+			QRCode.toCanvas(
+				document.getElementById("qrcode"),
+				arModelUrl,
+				function (error) {
+					if (error) {
+						console.error(error);
+						alert("Failed to generate QR code.");
+					} else {
+						console.log("QR Code generated!");
+					}
+				},
+			);
+		</script>
 	</body>
 </html>
