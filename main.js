@@ -1,7 +1,7 @@
 import QRCode from 'qrcode';
 
 // Оновлюємо шлях до сторінки AR
-const modelUrl = `${window.location.origin}/ar-model.html`;
+const modelUrl = `https://qr-test-theta.vercel.app/`;
 
 const canvas = document.getElementById('qrCanvas');
 
